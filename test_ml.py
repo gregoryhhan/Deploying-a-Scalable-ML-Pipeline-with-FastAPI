@@ -8,43 +8,46 @@ from ml.data import process_data
 
 
 # TODO: implement the first test. Change the function name and input as needed
+# first test tests the functionality of training model 
 def test_train_model():
-    # Generate synthetic data for testing
+    # generate synthetic data for testing
     X_train = np.random.rand(100, 5)
     y_train = np.random.randint(2, size=100)
     
-    # Train the model
+    # training the model
     model = train_model(X_train, y_train)
     
-    # Check if the model is trained (not None)
+    # check if the model is trained
     assert model is not None
 
 
 # TODO: implement the second test. Change the function name and input as needed
+# second test tests the compute model metrics functions and checks if metrics are populated and within range
 def test_compute_model_metrics():
-    # Generate synthetic data for testing
+    # generate synthetic data for testing
     y_true = np.random.randint(2, size=100)
     y_pred = np.random.randint(2, size=100)
     
-    # Compute model metrics
+    # compute model metrics
     precision, recall, fbeta = compute_model_metrics(y_true, y_pred)
     
-    # Check if the metrics are within valid range
+    # check if metrics are generated and within range
     assert 0 <= precision <= 1
     assert 0 <= recall <= 1
     assert 0 <= fbeta <= 1
 
 # TODO: implement the third test. Change the function name and input as needed
+# third test tests the inference function and checks if predictions are generated
 def test_inference():
-    # Load a trained model (assuming a trained model is available)
+    # loading our model
     model_path = "model/model.pkl"
     model = load_model(model_path)
     
-    # Generate synthetic data for testing inference
+    # generate synthetic data for testing
     X_test = np.random.rand(10, 108)
     
-    # Perform inference
+    # running the dummy data against the our model and receiving predictions on the 10 dummy features
     predictions = inference(model, X_test)
     
-    # Check if predictions are generated
+    # check if predictions are generated
     assert len(predictions) == 10
