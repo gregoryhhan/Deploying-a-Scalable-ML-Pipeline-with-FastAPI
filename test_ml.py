@@ -1,8 +1,11 @@
 # TODO: add necessary import
 import pytest
+import pickle
 import numpy as np
-from ml.model import train_model, compute_model_metrics, inference, save_model, load_model, performance_on_categorical_slice
+import pandas as pd
+from ml.model import train_model, compute_model_metrics, load_model, inference
 from ml.data import process_data
+
 
 # TODO: implement the first test. Change the function name and input as needed
 def test_train_model():
