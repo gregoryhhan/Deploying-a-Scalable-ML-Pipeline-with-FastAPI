@@ -40,8 +40,7 @@ def train_model(X_train, y_train):
                        n_jobs = -1
                        )
     grid_search.fit(X_train, y_train)
-    model = grid_search.best_estimator_
-    return model
+    return grid_search
 
 def compute_model_metrics(y, preds):
     """

@@ -10,8 +10,6 @@ print("Status Code:", r.status_code)
 # TODO: print the welcome message
 print("Welcome Message:", r.json()["message"])
 
-
-
 data = {
     "age": 37,
     "workclass": "Private",
@@ -35,4 +33,4 @@ r = requests.post("http://127.0.0.1:8000/predict/", json=data)
 # TODO: print the status code
 print("Status Code:", r.status_code)
 # TODO: print the result
-print("Prediction Result:", r.json()["result"])
+print("Result:", r.json()["result"])
